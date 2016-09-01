@@ -28,18 +28,18 @@ gapminder = read.csv("https://stat.duke.edu/~mc301/data/gapminder.csv")
 
 ## Exercise 1
 
-Visualize the relationship between life expectancy and GDP per capita in 2007 using a scatter plot.
+Visualize the relationship between life expectancy and population in 1952 using a scatter plot.
 
 ```{r ex1}
-gap07 = filter(gapminder, year == 2007)
-ggplot(data = gap07, aes(x = gdpPercap, y = lifeExp)) + geom_point()
+gap52 = filter(gapminder, year == 1952)
+ggplot(data = gap52, aes(x = lifeExp, y = pop)) + geom_point()
 ```
 
 
 ### Exercise 2
 
-Visualize the relationship between life expectancy and GDP per capita in 2007 using a scatter plot and color the points by continent.
+Visualize the relationship between life expectancy and population per capita in 1952 using a scatter plot and color the points by continent and size the points by gdp per capita.
 
 ```{r ex2}
-ggplot(data = gap07, aes(x = gdpPercap, y = lifeExp, color = continent)) + geom_point()
+ggplot(data = gap52, aes(x = lifeExp, y = pop, color = continent, size = gdpPercap)) + geom_point()
 ```
